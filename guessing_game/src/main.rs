@@ -5,18 +5,21 @@ use std::cmp::Ordering; // Importacion de la libreria cmp para comparar valores
 fn main() {
     println!("Guess the number!");
     let secret_number = rand::thread_rng().gen_range(1..=100); // Genera un numero aleatorio entre 1 y 100
+    loop{
     println!("Please input your guess.");
     let mut guess = String::new();// Crea una variable mutable llamada guess que es una cadena de texto vacia
-
     //std::io::stdin se puede utilizar la libreria std:: aun sin importar al principio del codigo
     io::stdin()// Toma la entrada del usuario desde la consola
         .read_line(&mut guess)// Lee la linea de entrada y la guarda en la variable guess, el & permite que varias partes del corigo accedan a una pieza de datos sin sobreescribirla q 
         .expect("Failed to read line");// Si hay un error al leer la linea, imprime el mensaje de error
+
+    let guess : u32 = guess.trim().parse().expect("Please type a number!"); // Convierte la cadena de texto en un numero entero sin signo de 32 bits, trim elimina los espacios en blanco y parse convierte la cadena en un numero, si hay un error imprime el mensaje de error
     println!("You guessed: {guess}"); // Imprime la variable guess
 
     match guess.cmp(&secret_number) { // Compara la variable guess con la variable secret_number
         Ordering::Less => println!("Too small!"), // Si guess es menor que secret_number, imprime "Too small!"
         Ordering::Greater => println!("Too big!"), // Si guess es mayor que secret_number, imprime "Too big!"
         Ordering::Equal => println!("You win!"), // Si guess es igual que secret_number, imprime "You win!"
+        }
     }
 }
