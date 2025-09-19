@@ -1,6 +1,4 @@
-use std::string;
-
-fn main() {
+fn main() {// main es la funcion principal, es donde se ejecuta el codigo de Rust, los parametros de la funcion main van entre los parentesis
     // Print "Hello, world!" to the console
     println!("Hello, world!");
     // variable 
@@ -18,5 +16,4 @@ fn main() {
 
     let int: i32 = 5; // i32 es un tipo de dato que representa un entero de 32 bits
     println!("Variable entera: {}", int); // Imprime la variable entera
-    let 
-}
+}       
