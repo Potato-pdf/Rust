@@ -12,6 +12,11 @@ fn main() {
     io::stdin()// Toma la entrada del usuario desde la consola
         .read_line(&mut guess)// Lee la linea de entrada y la guarda en la variable guess, el & permite que varias partes del corigo accedan a una pieza de datos sin sobreescribirla q 
         .expect("Failed to read line");// Si hay un error al leer la linea, imprime el mensaje de error
-    println!("You guessed: {secret_number}");
+    println!("You guessed: {guess}"); // Imprime la variable guess
 
+    match guess.cmp(&secret_number) { // Compara la variable guess con la variable secret_number
+        Ordering::Less => println!("Too small!"), // Si guess es menor que secret_number, imprime "Too small!"
+        Ordering::Greater => println!("Too big!"), // Si guess es mayor que secret_number, imprime "Too big!"
+        Ordering::Equal => println!("You win!"), // Si guess es igual que secret_number, imprime "You win!"
+    }
 }
