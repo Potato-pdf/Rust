@@ -1,6 +1,7 @@
 mod variables;
 mod tipos_de_datos;
 mod operadores;
+mod controles_de_flujo;
 
 fn main() {
 	// main es la funcion principal, es donde se ejecuta el codigo de Rust
