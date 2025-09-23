@@ -11,5 +11,5 @@ fn main() {
     //variables::shadowing::shadowing();
     operadores::operadores::operadores_aritmeticos();
     operadores::operadores::operadores_logicos();
-    //operadores::operadores::operadores_de_comparacion();
+    operadores::operadores::operadores_de_comparacion();
 }
