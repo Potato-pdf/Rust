@@ -17,5 +17,12 @@ pub fn operadores_logicos() {
 }
 
 pub fn operadores_de_comparacion() {
-
+    let a = 10;
+    let b = 5;
+    print!("Igual: {}", a == b); // Igual
+    print!("No igual: {}", a != b); // No igual
+    print!("Mayor que: {}", a > b); // Mayor que
+    print!("Menor que: {}", a < b); // Menor que
+    print!("Mayor o igual que: {}", a >= b); // Mayor o igual que
+    print!("Menor o igual que: {}", a <= b); // Menor o igual que
 }
