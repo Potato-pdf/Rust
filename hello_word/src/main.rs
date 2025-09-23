@@ -6,5 +6,6 @@ fn main() {
 	//variables::tipos_variables::variable();
 	//tipos_de_datos::escalares::datos_escalares();
     //tipos_de_datos::compuestos::datos_compuestos();
-    variables::variables_y_mutabilidad::variables_y_mutabilidad();
+    //variables::variables_y_mutabilidad::variables_y_mutabilidad();
+    variables::shadowing::shadowing();
 }
