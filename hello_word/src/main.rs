@@ -2,6 +2,7 @@ mod variables;
 mod tipos_de_datos;
 mod operadores;
 mod controles_de_flujo;
+mod funciones;
 
 fn main() {
 	//main es la funcion principal, es donde se ejecuta el codigo de Rust
@@ -17,7 +18,8 @@ fn main() {
     //controles_de_flujo::controladores::else_example();
     //controles_de_flujo::controladores::else_if_example();
     //controles_de_flujo::controladores::match_example();
-    controles_de_flujo::bucles::bucle_loop();
-    controles_de_flujo::bucles::bucle_while();
-    controles_de_flujo::bucles::bucle_for();
+    //controles_de_flujo::bucles::bucle_loop();
+    //controles_de_flujo::bucles::bucle_while();
+    //controles_de_flujo::bucles::bucle_for();
+    
 }   
