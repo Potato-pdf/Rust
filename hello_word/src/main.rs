@@ -13,8 +13,11 @@ fn main() {
     //operadores::operadores::operadores_aritmeticos();
     //operadores::operadores::operadores_logicos();
     //operadores::operadores::operadores_de_comparacion();
-    controles_de_flujo::controladores::if_example();
-    controles_de_flujo::controladores::else_example();
-    controles_de_flujo::controladores::else_if_example();
-    controles_de_flujo::controladores::match_example();
+    //controles_de_flujo::controladores::if_example();
+    //controles_de_flujo::controladores::else_example();
+    //controles_de_flujo::controladores::else_if_example();
+    //controles_de_flujo::controladores::match_example();
+    controles_de_flujo::bucles::bucle_loop();
+    controles_de_flujo::bucles::bucle_while();
+    controles_de_flujo::bucles::bucle_for();
 }   
