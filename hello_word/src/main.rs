@@ -4,7 +4,7 @@ mod operadores;
 mod controles_de_flujo;
 
 fn main() {
-	// main es la funcion principal, es donde se ejecuta el codigo de Rust
+	//main es la funcion principal, es donde se ejecuta el codigo de Rust
 	//variables::tipos_variables::variable();
 	//tipos_de_datos::escalares::datos_escalares();
     //tipos_de_datos::compuestos::datos_compuestos();
@@ -13,4 +13,4 @@ fn main() {
     operadores::operadores::operadores_aritmeticos();
     operadores::operadores::operadores_logicos();
     operadores::operadores::operadores_de_comparacion();
-}
+}   

@@ -10,6 +10,6 @@ pub fn datos_escalares() {
     let caracter: char = 'A'; // char es un tipo de dato que representa un caracter unicode
     println!("Caracter: {}", caracter);
     let emoji: char = '😊'; // char es un tipo de dato que representa un caracter unicode, puede ser un emoji
-    println!("Emoji: {}", emoji);
+    println!("Emoji: {}", emoji);   
 
 }
