@@ -10,7 +10,11 @@ fn main() {
     //tipos_de_datos::compuestos::datos_compuestos();
     //variables::variables_y_mutabilidad::variables_y_mutabilidad();
     //variables::shadowing::shadowing();
-    operadores::operadores::operadores_aritmeticos();
-    operadores::operadores::operadores_logicos();
-    operadores::operadores::operadores_de_comparacion();
+    //operadores::operadores::operadores_aritmeticos();
+    //operadores::operadores::operadores_logicos();
+    //operadores::operadores::operadores_de_comparacion();
+    controles_de_flujo::controladores::if_example();
+    controles_de_flujo::controladores::else_example();
+    controles_de_flujo::controladores::else_if_example();
+    controles_de_flujo::controladores::match_example();
 }   

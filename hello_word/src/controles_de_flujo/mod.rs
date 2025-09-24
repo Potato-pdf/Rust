@@ -1,2 +1,2 @@
-mod controladores;
-mod bucles;
+pub mod controladores;
+pub mod bucles;
