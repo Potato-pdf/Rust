@@ -2,6 +2,10 @@ mod funciones;
 use funciones::*;
 mod expresiones;
 use expresiones::*;
+mod sentencias;
+use sentencias::*;
+mod ownership;
+use ownership::*;
 
 fn main() {
     saludar();
@@ -12,5 +16,7 @@ fn main() {
     println!("El resultado de la resta es: {}", resultado_resta);
 
     expresiones();
+    sentencia();
+    ownership();
 
 }
