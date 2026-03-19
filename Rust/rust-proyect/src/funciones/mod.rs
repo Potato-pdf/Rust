@@ -1,4 +1,7 @@
+/*
+El módulo de funciones agrupa la lógica reutilizable del programa.
+Lo reexportamos para facilitar su uso desde main.rs.
+*/
 pub mod funciones;
 
-// Reexportar para que `use funciones::*;` en `main.rs` exponga las funciones
 pub use funciones::*;

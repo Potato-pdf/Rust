@@ -1,4 +1,6 @@
+/*
+El concepto de Ownership es central en Rust para la gestión de memoria sin recolector.
+*/
 pub mod ownership;
 
-// Reexportar para que `use funciones::*;` en `main.rs` exponga las funciones
 pub use ownership::*;

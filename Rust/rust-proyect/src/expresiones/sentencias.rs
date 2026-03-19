@@ -1,6 +1,16 @@
-/// Las sentencias en Rust son instrucciones que realizan una acción pero no producen un valor.
+/*
+Las sentencias en Rust son instrucciones que realizan una acción pero no producen un valor.
+Por ejemplo, una declaración `let` o una expresión terminada en `;`.
+*/
+
 pub fn sentencia()  {
+    /* 
+    Declarar variables es una sentencia.
+    */
     let a = 1;
     let b = 2;
+    /* 
+    Si añadimos un punto y coma al final de una expresión, se convierte en una sentencia.
+    */
     a + b;
 }

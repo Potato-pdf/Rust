@@ -1,3 +1,12 @@
+/*
+Este es el punto de entrada principal del proyecto Rust.
+Aquí se orquestan todos los módulos que contienen ejemplos de:
+- Funciones
+- Expresiones
+- Sentencias de control
+- Conceptos de Ownership
+*/
+
 mod funciones;
 use funciones::*;
 mod expresiones;
@@ -6,6 +15,7 @@ mod sentencias;
 use sentencias::*;
 mod ownership;
 use ownership::*;
+
 
 fn main() {
     saludar();

@@ -1,24 +1,38 @@
-pub fn sentencia() {
-    println!("--- Sentencias ---");
+/*
+En Rust, las sentencias son bloques fundamentales de ejecución.
+Pueden ser declaraciones de variables o expresiones que terminan con un punto y coma.
+*/
 
-    // Sentencia de declaración
+pub fn sentencia() {
+    /*
+    Sentencia de declaración: asocia un valor a un nombre de variable (`let`).
+    */
     let x = 5;
 
-    // Sentencia de expresión
+    /*
+    Sentencia de expresión: Rust permite que los bloques `{}` devuelvan valores.
+    En este caso, `y` toma el valor de la última expresión dentro del bloque.
+    */
     let y = {
         let x = 3;
-        x + 1
+        x + 1 // No llevar punto y coma lo convierte en la expresión de retorno del bloque
     };
 
     println!("x: {}, y: {}", x, y);
 
-    // Control de flujo como sentencias/expresiones
+    /*
+    Control de flujo: `if` también es una expresión en Rust.
+    */
     if x < 10 {
         println!("x es menor que 10");
     } else {
         println!("x es mayor o igual que 10");
     }
 
+    /*
+    Loops: Rust cuenta con `while` y `for`.
+    `for` es ideal para recorrer rangos como `0..3`.
+    */
     let mut count = 0;
     while count < 3 {
         println!("count: {}", count);
