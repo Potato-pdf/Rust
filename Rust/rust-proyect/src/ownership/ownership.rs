@@ -8,13 +8,13 @@ Cuando una variable sale de su scope, se elimina de la memoria
 Muestra cómo funciona la propiedad (ownership) y el cambio de dueño de un valor.
 */
 pub fn ownership() {
-    /*
+    /**
     en este caso, "saludo" es el dueño de "hola" y cuando sale de su scope, se elimina de la memoria
     */
     let saludo = String::from("hola");
     println!("{}", saludo);
     
-    /*
+    /**
     en este caso, "mensaje" es el dueño de "hola" no se rompe la propiedad de un solo dueño, 
     si trataramos de hacer println!("{}", saludo); daria error porque saludo ya no es dueño de "hola"
     */
