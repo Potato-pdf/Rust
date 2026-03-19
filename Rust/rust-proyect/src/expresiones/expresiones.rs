@@ -5,6 +5,3 @@ pub fn expresiones() {
     println!("Las expresiones en Rust son valores que se evalúan y producen un resultado.");
 }
 
-/// Las sentencias en Rust son instrucciones que realizan una acción pero no producen un valor.
-pub fn sentencia()  {
-ii
