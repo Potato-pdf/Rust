@@ -1,4 +1,4 @@
-/*
+/*!
 Este es el punto de entrada principal del proyecto Rust.
 Aquí se orquestan todos los módulos que contienen ejemplos de:
 - Funciones

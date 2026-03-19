@@ -1,8 +1,11 @@
-/*
+/*!
 En Rust, las sentencias son bloques fundamentales de ejecución.
 Pueden ser declaraciones de variables o expresiones que terminan con un punto y coma.
 */
 
+/**
+Muestra ejemplos de diferentes tipos de sentencias: declaraciones, bloques y control de flujo.
+*/
 pub fn sentencia() {
     /*
     Sentencia de declaración: asocia un valor a un nombre de variable (`let`).

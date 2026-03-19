@@ -1,9 +1,12 @@
-/*
+/*!
 El ownership es un concepto fundamental en Rust que permite gestionar la memoria de forma segura sin necesidad de un recolector de basura.
 El scope es lo que esta dentro de las llaves {} delimita el tiempo de vida de una variable
 Cuando una variable sale de su scope, se elimina de la memoria
 */
 
+/**
+Muestra cómo funciona la propiedad (ownership) y el cambio de dueño de un valor.
+*/
 pub fn ownership() {
     /*
     en este caso, "saludo" es el dueño de "hola" y cuando sale de su scope, se elimina de la memoria
@@ -18,3 +21,4 @@ pub fn ownership() {
     let mensaje = saludo;
     println!("{}", mensaje);
 }
+
