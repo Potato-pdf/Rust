@@ -11,8 +11,6 @@ mod funciones;
 use funciones::*;
 mod expresiones;
 use expresiones::*;
-mod sentencias;
-use sentencias::*;
 mod ownership;
 use ownership::*;
 
