@@ -23,13 +23,14 @@ pub extern "C" fn test_constructor(id: u32) -> *mut TestStruct {
     Box::into_raw(test_sdk)
 }
 
-
 #[unsafe(no_mangle)]
-pub extern "C" fn mudra_free_string(s: *mut c_char) {
-    unsafe {
-        if s.is_null() {
-            return;
-        }
-        CString::from_raw(s); 
+pub unsafe extern "C" fn test_increment_request_count(ptr: *mut TestStruct) {
+    if !ptr.is_null(){
+        let sdk = &mut *ptr;
+        sdk.request_count += 1;
+        println!("Request count incremented: {}", sdk.request_count);
     }
 }
+
+
+
