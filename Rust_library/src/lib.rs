@@ -36,7 +36,7 @@ pub unsafe extern "C" fn test_increment_request_count(ptr: *mut TestStruct) {
 #[unsafe(no_mangle)]
 pub extern "C" fn clean_string(ptr: *mut TestStruct) {
     if !ptr.is_null(){
-        drop(Box::from_raw(ptr));
+        drop(unsafe { Box::from_raw(ptr) });
         println!("Memory cleaned for TestStruct");
     }
 
