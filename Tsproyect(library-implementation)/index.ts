@@ -24,13 +24,19 @@ const lib = dlopen(libPath, {
     }
 
 });
-
+console.log(Object.keys(lib));          // ¿tiene 'symbols'?
+console.log(Object.keys(lib.symbols));  // lista de símbolos exportados
 /**
  * usamos la libreria para crear una instancia de TestStruct y luego incrementamos el contador de peticiones
  */
-const testStrictPtr = lib.test_constructor(111);
-lib.symbols.test_increment_request_count(testStrictPtr);
-lib.symbols.test_increment_request_count(testStrictPtr);
+const testStrictPtr = lib.symbols.test_constructor(102);
+if (testStrictPtr < 10) {
+while (true) {
+    lib.symbols.test_increment_request_count(testStrictPtr);
+}
+}
+
+
 
 /**
  * Limpiamos la memoria asignada para TestStruct
