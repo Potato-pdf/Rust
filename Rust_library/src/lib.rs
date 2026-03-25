@@ -16,7 +16,7 @@ con "Box::into_raw" convertimos el Box en un puntero crudo, transfiriendo la pro
 */
 #[unsafe(no_mangle)]
 pub extern "C" fn test_constructor(id: u32) -> *mut TestStruct {
-    let test_sdk = Box::new(TestStruct{
+    let test_sdk: Box<TestStruct> = Box::new(TestStruct{
         id,
         request_count: 0,
     });
@@ -25,10 +25,14 @@ pub extern "C" fn test_constructor(id: u32) -> *mut TestStruct {
 
 #[unsafe(no_mangle)]
 pub unsafe extern "C" fn test_increment_request_count(ptr: *mut TestStruct) {
-    if !ptr.is_null(){
-        let sdk = &mut *ptr;
-        sdk.request_count += 1;
-        println!("Request count incremented: {}", sdk.request_count);
+    if ptr.is_null(){
+        0;
+    }
+    unsafe{
+        let test_struct = &mut *ptr;
+        test_struct.request_count = test_struct.request_count.saturating_add(1);
+        test_struct.request_count 
+    
     }
 }
 
