@@ -31,17 +31,26 @@ pub unsafe extern "C" fn test_increment_request_count(ptr: *mut TestStruct) {
     unsafe{
         let test_struct = &mut *ptr;
         test_struct.request_count = test_struct.request_count.saturating_add(1);
-        test_struct.request_count 
-    
     }
 }
 
+#[unsafe(no_mangle)]
+pub extern "C" fn test_get_request_count(ptr: *const TestStruct) -> u32 {
+    if ptr.is_null(){
+        return 0;
+    }
+    unsafe{
+        (&*ptr).request_count
+    }
+}
 
 #[unsafe(no_mangle)]
 pub extern "C" fn clean_string(ptr: *mut TestStruct) {
-    if !ptr.is_null(){
-        drop(unsafe { Box::from_raw(ptr) });
-        println!("Memory cleaned for TestStruct");
+    if ptr.is_null(){
+        return;
+    }
+    unsafe{
+        Box::from_raw(ptr);
     }
 
 }
