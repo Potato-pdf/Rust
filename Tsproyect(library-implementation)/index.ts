@@ -10,13 +10,18 @@ const libPath = join(import.meta.dir, "../Rust_library/target/release/libtest_li
  * Convertimos el puntero de C a un String de TypeScript
  */
 const lib = dlopen(libPath, {
-    mudra_init_handshake: {
-        args: [],
+    test_constructor: {
+        args: [FFIType.u32],
         returns: FFIType.ptr,
     },
-    mudra_free_string: {
+    test_increment_request_count: {
+        args: [FFIType.ptr],
+        returns: FFIType.void,
+    },
+    clean_string: {
         args: [FFIType.ptr],
         returns: FFIType.void,
     }
 
-})
+});
+
