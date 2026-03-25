@@ -25,3 +25,14 @@ const lib = dlopen(libPath, {
 
 });
 
+/**
+ * usamos la libreria para crear una instancia de TestStruct y luego incrementamos el contador de peticiones
+ */
+const testStrictPtr = lib.test_constructor(111);
+lib.symbols.test_increment_request_count(testStrictPtr);
+lib.symbols.test_increment_request_count(testStrictPtr);
+
+/**
+ * Limpiamos la memoria asignada para TestStruct
+ */
+lib.symbols.clean_string(testStrictPtr);
