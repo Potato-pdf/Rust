@@ -1,5 +1,4 @@
-use std::ffi::CString;
-use std::os::raw::c_char;
+// Eliminados imports no usados
 
 /** 
 Structura de prueba privada para proyectos fuera de Rust_library.
@@ -16,41 +15,28 @@ con "Box::into_raw" convertimos el Box en un puntero crudo, transfiriendo la pro
 */
 #[unsafe(no_mangle)]
 pub extern "C" fn test_constructor(id: u32) -> *mut TestStruct {
-    let test_sdk: Box<TestStruct> = Box::new(TestStruct{
-        id,
-        request_count: 0,
-    });
-    Box::into_raw(test_sdk)
+    let s = Box::new(TestStruct { id, request_count: 0 });
+    Box::into_raw(s)
 }
 
 #[unsafe(no_mangle)]
-pub unsafe extern "C" fn test_increment_request_count(ptr: *mut TestStruct) {
-    if ptr.is_null(){
-        0;
-    }
-    unsafe{
-        let test_struct = &mut *ptr;
-        test_struct.request_count = test_struct.request_count.saturating_add(1);
+pub unsafe extern "C" fn test_increment_request_count(ptr: *mut TestStruct) -> u32 {
+    if ptr.is_null() { return 0; }
+    unsafe {
+        let s = &mut *ptr;
+        s.request_count = s.request_count.saturating_add(1);
+        s.request_count
     }
 }
 
 #[unsafe(no_mangle)]
-pub extern "C" fn test_get_request_count(ptr: *const TestStruct) -> u32 {
-    if ptr.is_null(){
-        return 0;
-    }
-    unsafe{
-        (&*ptr).request_count
-    }
+pub unsafe extern "C" fn test_get_request_count(ptr: *const TestStruct) -> u32 {
+    if ptr.is_null() { return 0; }
+    unsafe { (&*ptr).request_count }
 }
 
 #[unsafe(no_mangle)]
-pub extern "C" fn clean_string(ptr: *mut TestStruct) {
-    if ptr.is_null(){
-        return;
-    }
-    unsafe{
-        Box::from_raw(ptr);
-    }
-
+pub unsafe extern "C" fn test_free(ptr: *mut TestStruct) {
+    if ptr.is_null() { return; }
+    unsafe { let _ = Box::from_raw(ptr); } // libera
 }
